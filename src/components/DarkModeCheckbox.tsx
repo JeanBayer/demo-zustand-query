@@ -7,8 +7,10 @@ export const DarkModeCheckbox = () => {
   ]);
 
   return (
-    <label htmlFor="checkbox" className={"checkbox--mode"}>
-      <span>{darkMode ? "Dark Mode ON" : "Click to enable Dark Mode"}</span>
+    <label htmlFor="checkbox" className="checkbox__mode">
+      <span className="checkbox__mode--label">
+        {darkMode ? "Dark Mode ON" : "Click to enable Dark Mode"}
+      </span>
       <input
         type="checkbox"
         name="checkbox"

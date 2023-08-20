@@ -19,9 +19,14 @@ code {
 }
 
 button {
-  border: 1px solid blue;
+  border: 1px solid #8686ea;
   border-radius: 4px;
   background: none;
   cursor: pointer;
   padding: 8px 16px;
+  transition: all 0.2s ease-out;
+}
+
+button:hover {
+  filter: contrast(0.5);
 }

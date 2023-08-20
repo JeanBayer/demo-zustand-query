@@ -2,11 +2,10 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   background-color: #fff;
   color: #282c34;
-
   transition: background-color 2s ease-out;
 }
 
@@ -19,11 +18,68 @@
   color: white;
 }
 
-.checkbox--mode {
-  padding: 0px 16px;
-  cursor: pointer;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px 16px;
 }
 
-.checkbox--mode span {
+.checkbox__mode {
+  border: 1px solid #8686ea;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: all 0.2s ease-out;
+}
+
+.checkbox__mode:hover {
+  filter: contrast(0.5);
+}
+
+.checkbox__mode--label {
   margin-right: 8px;
+}
+
+.list__languages {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 16px;
+}
+
+.list__languages--article {
+  border-radius: 15px;
+  border: 1px solid #dcdcdcee;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  min-width: 180px;
+  padding: 16px;
+}
+
+.language__title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.button__like {
+  width: 100%;
+  margin: 4px 0px;
+}
+
+.button__like--counter {
+  text-align: end;
+  width: 100%;
+  display: inline-block;
+}
+
+.button__like--icon {
+  width: 20px;
+  height: 20px;
 }

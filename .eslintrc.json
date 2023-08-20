@@ -8,7 +8,8 @@
     "standard",
     "plugin:react/jsx-runtime",
     "eslint-config-prettier",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
