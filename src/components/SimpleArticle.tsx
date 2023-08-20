@@ -1,18 +1,18 @@
-import { Language } from "../types";
+import { Article } from "../types";
 
 type Props = {
   onDelete: () => void;
-} & Pick<Language, "author" | "title">;
-export const SimpleLanguage = ({ author, title, onDelete }: Props) => {
+} & Pick<Article, "author" | "title">;
+export const SimpleArticle = ({ author, title, onDelete }: Props) => {
   return (
     <>
-      <h2 className="language__title">
+      <h2 className="article__title">
         {title}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="language__title--icon"
+          className="article__title--icon"
           onClick={onDelete}
         >
           <path

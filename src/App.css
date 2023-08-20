@@ -87,7 +87,7 @@
 
 /* Actions END */
 
-.list__languages {
+.list__articles {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +96,7 @@
   padding: 48px 16px;
 }
 
-.list__languages--article {
+.list__articles--article {
   border-radius: 15px;
   border: 1px solid var(--primary-color);
   box-shadow: var(--box-shadow);
@@ -109,7 +109,7 @@
   padding: 16px;
 }
 
-.language__title {
+.article__title {
   align-items: center;
   display: flex;
   font-size: 1.6rem;
@@ -118,7 +118,7 @@
   text-align: center;
 }
 
-.language__title--icon {
+.article__title--icon {
   width: 16px;
   height: 16px;
   cursor: pointer;

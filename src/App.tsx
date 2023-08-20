@@ -1,11 +1,6 @@
 import { useStore } from "./store";
 
-import {
-  Actions,
-  ListLanguages,
-  Navbar,
-  QuantityLanguages,
-} from "./components";
+import { Actions, ListArticles, Navbar, QuantityArticles } from "./components";
 
 import "./App.css";
 
@@ -16,8 +11,8 @@ function App() {
     <main className={`App ${darkMode ? "App--dark" : ""}`}>
       <Navbar />
       <Actions />
-      <ListLanguages />
-      <QuantityLanguages />
+      <ListArticles />
+      <QuantityArticles />
     </main>
   );
 }

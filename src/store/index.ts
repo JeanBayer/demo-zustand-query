@@ -1,5 +1,6 @@
 import React from "react";
 import { create } from "zustand";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 type Store = {
   darkMode: boolean;
@@ -22,30 +23,39 @@ type Store = {
   cleanModal: () => void;
 };
 
-export const useStore = create<Store>((set) => ({
-  darkMode: false,
-  toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
+export const useStore = create(
+  persist<Store>(
+    (set) => ({
+      darkMode: false,
+      toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
 
-  order: "desc",
-  toggleOrder: () =>
-    set((state) => ({ order: state.order === "desc" ? "asc" : "desc" })),
+      order: "desc",
+      toggleOrder: () =>
+        set((state) => ({ order: state.order === "desc" ? "asc" : "desc" })),
 
-  modal: false,
-  toggleModal: () => set((state) => ({ modal: !state.modal })),
+      modal: false,
+      toggleModal: () => set((state) => ({ modal: !state.modal })),
 
-  title: "",
-  author: "",
-  description: "",
-  setInput:
-    ({ name }) =>
-    (e) => {
-      const value = (e.target as HTMLInputElement).value;
-      return set({ [name]: value });
-    },
-  cleanModal: () =>
-    set({
       title: "",
       author: "",
       description: "",
+      setInput:
+        ({ name }) =>
+        (e) => {
+          const value = (e.target as HTMLInputElement).value;
+          return set({ [name]: value });
+        },
+      cleanModal: () =>
+        set({
+          title: "",
+          author: "",
+          description: "",
+        }),
     }),
-}));
+
+    {
+      name: "tech",
+      storage: createJSONStorage(() => sessionStorage),
+    }
+  )
+);

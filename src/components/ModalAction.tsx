@@ -2,7 +2,7 @@ import React from "react";
 import { useStore } from "../store";
 
 import { Modal } from "../components";
-import { useLanguages } from "../hooks";
+import { useArticles } from "../hooks";
 
 export const ModalAction = () => {
   const [modal, toggleModal, title, author, description, setInput, cleanModal] =
@@ -15,14 +15,14 @@ export const ModalAction = () => {
       state.setInput,
       state.cleanModal,
     ]);
-  const { createLanguage } = useLanguages();
+  const { createArticle } = useArticles();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if ([title, author, description].includes("")) return;
 
-    createLanguage({ title, author, description });
+    createArticle({ title, author, description });
     toggleModal();
     cleanModal();
   };
@@ -35,7 +35,7 @@ export const ModalAction = () => {
       {modal && (
         <Modal>
           <h2 className="modal__form--title">
-            Create a Language{" "}
+            Create a Article{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
