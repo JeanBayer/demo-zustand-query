@@ -4,4 +4,26 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
+  background-color: #fff;
+  color: #282c34;
+
+  transition: background-color 2s ease-out;
+}
+
+.App--dark {
+  background-color: #282c34;
+  color: white;
+}
+
+.App--dark button {
+  color: white;
+}
+
+.checkbox--mode {
+  padding: 0px 16px;
+  cursor: pointer;
+}
+
+.checkbox--mode span {
+  margin-right: 8px;
 }

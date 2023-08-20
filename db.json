@@ -4,21 +4,21 @@
       "id": 1,
       "title": "react",
       "author": "meta",
-      "likes": 6,
+      "likes": 11,
       "description": "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications, as it is optimal for fetching rapidly changing data that needs to be recorded. However, fetching data is only the beginning of what happens on a web page, which is why complex React applications usually require the use of additional libraries for state management, routing, and interaction with an API: Redux, React Router and axios are examples of such libraries."
     },
     {
       "id": 2,
       "title": "angular",
       "author": "google",
-      "likes": 7,
+      "likes": 9,
       "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS."
     },
     {
       "id": 3,
       "title": "vue",
       "author": "evan you",
-      "likes": 11,
+      "likes": 21,
       "description": "Vue.js is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications. It was created by Evan You, and is maintained by him and the rest of the active core team members coming from various companies such as Netlify and Netguru."
     },
     {
