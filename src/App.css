@@ -1,23 +1,27 @@
 .App {
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
   display: grid;
   justify-items: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  color: #282c34;
+  min-height: 100vh;
+  padding: 24px 8px;
   transition: background-color 2s ease-out;
+  width: 100vw;
 }
 
 .App--dark {
-  background-color: #282c34;
-  color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-.App--dark button {
-  color: white;
+/* Navbar START */
+.navbar__title {
+  text-align: center;
 }
+/* Navbar END */
 
+/* Actions START */
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -25,39 +29,75 @@
   padding: 24px 16px;
 }
 
-.checkbox__mode {
-  border: 1px solid #8686ea;
-  border-radius: 4px;
-  background: none;
-  cursor: pointer;
-  padding: 8px 16px;
-  transition: all 0.2s ease-out;
-}
-
-.checkbox__mode:hover {
-  filter: contrast(0.5);
-}
-
 .checkbox__mode--label {
   margin-right: 8px;
 }
+
+.modal__centered {
+  backdrop-filter: blur(6px);
+  background-color: #000000aa;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.modal__container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 48px 24px;
+  background-color: var(--background-color);
+  width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 1px 7px 0 rgba(31, 38, 135, 0.37);
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 0px;
+}
+
+.modal__form--title {
+  text-align: center;
+}
+
+.modal__form--icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.modal__form--label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Actions END */
 
 .list__languages {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
-  padding: 24px 16px;
+  gap: 24px;
+  padding: 48px 16px;
 }
 
 .list__languages--article {
   border-radius: 15px;
-  border: 1px solid #dcdcdcee;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 1px 7px 0 rgba(31, 38, 135, 0.37);
   display: flex;
   flex-direction: column;
   gap: 8px;
-  justify-content: center;
+  height: 240px;
+  justify-content: space-around;
   min-width: 180px;
   padding: 16px;
 }
@@ -82,4 +122,18 @@
 .button__like--icon {
   width: 20px;
   height: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 24px 0;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

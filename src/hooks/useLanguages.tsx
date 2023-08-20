@@ -1,7 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { useMemo } from "react";
-import { getLanguagesService, upLikeService } from "../services";
+import {
+  createLanguageService,
+  getLanguagesService,
+  upLikeService,
+} from "../services";
 import { useStore } from "../store";
 
 export const useLanguages = () => {
@@ -21,6 +25,13 @@ export const useLanguages = () => {
     },
   });
 
+  const { mutate: createLanguage } = useMutation({
+    mutationFn: createLanguageService,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["languages"] });
+    },
+  });
+
   const orderedLanguages = useMemo(() => {
     if (!languagesData) return;
     return [...languagesData]?.sort((a, b) => {
@@ -32,5 +43,6 @@ export const useLanguages = () => {
   return {
     languages: orderedLanguages,
     handleLike,
+    createLanguage,
   };
 };

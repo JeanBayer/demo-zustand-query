@@ -1,5 +1,5 @@
 export type Language = {
-  id: number;
+  id: string;
   title: string;
   author: string;
   likes: number;

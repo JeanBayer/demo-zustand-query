@@ -7,12 +7,28 @@ export async function getLanguagesService() {
 }
 
 type UpLike = {
-  languageId: number;
+  languageId: string;
   newLike: number;
 };
 export async function upLikeService({ languageId, newLike }: UpLike) {
   const { data } = await api.patch<Language>(`/languages/${languageId}`, {
     likes: newLike,
+  });
+  return data;
+}
+
+export async function createLanguageService({
+  author,
+  description,
+  title,
+}: Pick<Language, "author" | "description" | "title">) {
+  const id = crypto.randomUUID();
+  const { data } = await api.post<Language>("/languages", {
+    author,
+    description,
+    title,
+    id,
+    likes: 0,
   });
   return data;
 }
