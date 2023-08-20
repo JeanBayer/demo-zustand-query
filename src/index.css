@@ -11,8 +11,10 @@ body {
   --text-color: #282c34;
   --title-color: #888edc;
   --text-button-color: #e0e0e0;
+  --text-delete-color: #cb5e5e;
   --background-color: #e0e0e0;
   --primary-color: #888edc;
+  --box-shadow: 0 1px 7px 0 rgba(31, 38, 135, 0.37);
 }
 
 .App--dark {

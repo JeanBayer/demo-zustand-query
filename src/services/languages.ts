@@ -32,3 +32,8 @@ export async function createLanguageService({
   });
   return data;
 }
+
+export async function deleteLanguageService({ id }: Pick<Language, "id">) {
+  const { data } = await api.delete<Language>(`/languages/${id}`);
+  return data;
+}
