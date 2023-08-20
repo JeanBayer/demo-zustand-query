@@ -1,15 +1,20 @@
 import { useEffect, useMemo, useState } from "react";
 
-import { Like, SimpleLanguage } from "./components";
+import { DarkModeCheckbox, Like, SimpleLanguage } from "./components";
 import { getLanguagesService, upLikeService } from "./services";
-import type { Language } from "./types";
+import { useStore } from "./store";
 
 import "./App.css";
+import type { Language } from "./types";
 
 function App() {
   const [languages, setLanguages] = useState<Language[]>();
-  const [order, setOrder] = useState<"asc" | "desc">("desc");
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+
+  const darkMode = useStore((state) => state.darkMode);
+  const [order, toggleOrder] = useStore((state) => [
+    state.order,
+    state.toggleOrder,
+  ]);
 
   useEffect(() => {
     getLanguagesService().then((response) => {
@@ -43,24 +48,12 @@ function App() {
 
   return (
     <div className={`App ${darkMode ? "App--dark" : ""}`}>
-      <h1>Programming Languages</h1>
+      <h1>Programming Languages in {darkMode ? "Dark" : "Light"}</h1>
       <div>
-        {order === "asc" ? (
-          <button onClick={() => setOrder("desc")}>DESC</button>
-        ) : (
-          <button onClick={() => setOrder("asc")}>ASC</button>
-        )}
-
-        <label htmlFor="checkbox" className={"checkbox--mode"}>
-          <span>{darkMode ? "Dark Mode ON" : "Click to enable Dark Mode"}</span>
-          <input
-            type="checkbox"
-            name="checkbox"
-            id="checkbox"
-            checked={darkMode}
-            onChange={() => setDarkMode(!darkMode)}
-          />
-        </label>
+        <button onClick={toggleOrder}>
+          {order === "asc" ? "DESC" : "ASC"}
+        </button>
+        <DarkModeCheckbox />
       </div>
       {orderedLanguages?.map(({ author, id, likes, title }) => (
         <div key={id}>
