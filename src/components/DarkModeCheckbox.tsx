@@ -1,10 +1,8 @@
 import { useStore } from "../store";
 
 export const DarkModeCheckbox = () => {
-  const [darkMode, toggleDarkMode] = useStore((state) => [
-    state.darkMode,
-    state.toggleDarkMode,
-  ]);
+  const darkMode = useStore((state) => state.darkMode);
+  const toggleDarkMode = useStore((state) => state.toggleDarkMode);
 
   return (
     <label htmlFor="checkbox" className="button">

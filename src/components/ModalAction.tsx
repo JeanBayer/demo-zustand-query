@@ -5,16 +5,15 @@ import { Modal } from "../components";
 import { useArticles } from "../hooks";
 
 export const ModalAction = () => {
-  const [modal, toggleModal, title, author, description, setInput, cleanModal] =
-    useStore((state) => [
-      state.modal,
-      state.toggleModal,
-      state.title,
-      state.author,
-      state.description,
-      state.setInput,
-      state.cleanModal,
-    ]);
+  const modal = useStore((state) => state.modal);
+  const toggleModal = useStore((state) => state.toggleModal);
+  const cleanModal = useStore((state) => state.cleanModal);
+  
+  const title = useStore((state) => state.title);
+  const author = useStore((state) => state.author);
+  const description = useStore((state) => state.description);
+  const setInput = useStore((state) => state.setInput);
+
   const { createArticle } = useArticles();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
