@@ -7,7 +7,7 @@ import {
   getArticleService,
   upLikeService,
 } from "../services";
-import { useStore } from "../store";
+import { useStore } from "../store/useStore";
 
 export const useArticles = () => {
   const queryClient = useQueryClient();

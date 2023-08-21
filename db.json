@@ -4,36 +4,29 @@
       "id": "5872aded-d613-410e-841f-a681a6aa8d8b",
       "title": "react",
       "author": "meta",
-      "likes": 30,
+      "likes": 32,
       "description": "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications, as it is optimal for fetching rapidly changing data that needs to be recorded. However, fetching data is only the beginning of what happens on a web page, which is why complex React applications usually require the use of additional libraries for state management, routing, and interaction with an API: Redux, React Router and axios are examples of such libraries."
     },
     {
       "id": "fe6c7438-a833-4c7c-9ea3-cdc84ef41dfc",
       "title": "angular",
       "author": "google",
-      "likes": 17,
+      "likes": 24,
       "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS."
     },
     {
       "id": "e47a03d4-5da3-4451-a2c1-265de99cc2c1",
       "title": "vue",
       "author": "evan you",
-      "likes": 49,
+      "likes": 50,
       "description": "Vue.js is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications. It was created by Evan You, and is maintained by him and the rest of the active core team members coming from various companies such as Netlify and Netguru."
     },
     {
       "id": "04cdadeb-0228-43db-85dc-ce7e960a6cde",
       "title": "svelte",
       "author": "rich harris",
-      "likes": 15,
+      "likes": 24,
       "description": "Svelte is a free and open-source front end compiler created by Rich Harris and maintained by the Svelte core team members. Svelte applications do not include framework references. Instead, building a Svelte application generates code to manipulate the DOM, which may give better client run-time performance."
-    },
-    {
-      "author": "sss",
-      "description": "ss",
-      "title": "jhan",
-      "id": "0ad54ae5-86f3-4bee-983b-fdd4790048be",
-      "likes": 0
     }
   ]
 }

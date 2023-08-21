@@ -1,5 +1,5 @@
 import React from "react";
-import { useStore } from "../store";
+import { useStore } from "../store/useStore";
 
 import { Modal } from "../components";
 import { useArticles } from "../hooks";

@@ -6,8 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: var(--background-color);
-
   --text-color: #282c34;
   --title-color: #888edc;
   --text-button-color: #e0e0e0;

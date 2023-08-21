@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 
-import { useStore } from "../store";
+import { useStore } from "../store/useStore";
 
 type Props = {
   children?: React.ReactNode;

@@ -1,4 +1,4 @@
-import { useStore } from "../store";
+import { useStore } from "../store/useStore";
 
 export const Navbar = () => {
   const darkMode = useStore((state) => state.darkMode);

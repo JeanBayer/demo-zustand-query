@@ -1,4 +1,4 @@
-import { useStore } from "../store";
+import { useStore } from "../store/useStore";
 
 export const OrderAction = () => {
   const order = useStore((state) => state.order);

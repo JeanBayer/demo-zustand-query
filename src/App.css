@@ -1,5 +1,5 @@
 .App {
-  align-items: center;
+  align-content: center;
   background-color: var(--background-color);
   color: var(--text-color);
   display: grid;
@@ -8,11 +8,6 @@
   padding: 24px 8px;
   transition: background-color 2s ease-out;
   width: 100vw;
-}
-
-.App--dark {
-  background-color: var(--background-color);
-  color: var(--text-color);
 }
 
 /* Navbar START */

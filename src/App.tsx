@@ -1,4 +1,4 @@
-import { useStore } from "./store";
+import { useStore } from "./store/useStore";
 
 import { Actions, ListArticles, Navbar, QuantityArticles } from "./components";
 
