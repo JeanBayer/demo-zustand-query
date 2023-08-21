@@ -1,6 +1,13 @@
 import React from "react";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
+import { immer } from "zustand/middleware/immer";
+
+type FormData = {
+  title: string;
+  author: string;
+  description: string;
+};
 
 type Store = {
   darkMode: boolean;
@@ -12,9 +19,7 @@ type Store = {
   modal: boolean;
   toggleModal: () => void;
 
-  title: string;
-  author: string;
-  description: string;
+  formData: FormData;
   setInput: ({
     name,
   }: {
@@ -24,8 +29,8 @@ type Store = {
 };
 
 export const useStore = create(
-  persist<Store>(
-    (set) => ({
+  persist(
+    immer<Store>((set) => ({
       darkMode: false,
       toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
 
@@ -36,23 +41,29 @@ export const useStore = create(
       modal: false,
       toggleModal: () => set((state) => ({ modal: !state.modal })),
 
-      title: "",
-      author: "",
-      description: "",
+      formData: {
+        title: "",
+        author: "",
+        description: "",
+      },
       setInput:
         ({ name }) =>
         (e) => {
           const value = (e.target as HTMLInputElement).value;
-          return set({ [name]: value });
+          set((state) => {
+            state.formData[name] = value;
+          });
         },
+
       cleanModal: () =>
         set({
-          title: "",
-          author: "",
-          description: "",
+          formData: {
+            title: "",
+            author: "",
+            description: "",
+          },
         }),
-    }),
-
+    })),
     {
       name: "tech",
       storage: createJSONStorage(() => sessionStorage),

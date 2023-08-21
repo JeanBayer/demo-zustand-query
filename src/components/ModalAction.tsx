@@ -8,10 +8,8 @@ export const ModalAction = () => {
   const modal = useStore((state) => state.modal);
   const toggleModal = useStore((state) => state.toggleModal);
   const cleanModal = useStore((state) => state.cleanModal);
-  
-  const title = useStore((state) => state.title);
-  const author = useStore((state) => state.author);
-  const description = useStore((state) => state.description);
+
+  const { title, author, description } = useStore((state) => state.formData);
   const setInput = useStore((state) => state.setInput);
 
   const { createArticle } = useArticles();

@@ -27,6 +27,13 @@
       "author": "rich harris",
       "likes": 15,
       "description": "Svelte is a free and open-source front end compiler created by Rich Harris and maintained by the Svelte core team members. Svelte applications do not include framework references. Instead, building a Svelte application generates code to manipulate the DOM, which may give better client run-time performance."
+    },
+    {
+      "author": "sss",
+      "description": "ss",
+      "title": "jhan",
+      "id": "0ad54ae5-86f3-4bee-983b-fdd4790048be",
+      "likes": 0
     }
   ]
 }
